@@ -22,7 +22,7 @@ const MapComponent = ({ onMapEnd }) => {
     }, [onMapEnd]);
 
     return (
-        <LoadScript googleMapsApiKey={process.env.AIzaSyAQ8D8xWDAsWbJ2_hcSKvoMyMExWkYMOp0}>
+        <LoadScript googleMapsApiKey={process.env.'Your Google map api'}>
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
