@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../../Navbar/Navbar';
-import RentDashboard from './RentDashboard';
+import Sidebar from '../../Sidebar/Sidebar';
+import rentalDashboardData from './RentDashboardData';
+
 
 const Address=()=>{
     return(
@@ -12,7 +14,7 @@ const Address=()=>{
                 </div>
                 <div className='flex flex-row'>
                     <div className='py-8'>
-                        <RentDashboard />
+                        <Sidebar dashboardData={rentalDashboardData} />
                     </div>
 
                     <div className='bg-gray-100 w-full'>

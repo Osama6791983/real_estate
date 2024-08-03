@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from '../../Navbar/Navbar';
-import RentDashboard from './RentDashboard';
 import { IoCallOutline } from "react-icons/io5";
 import { LuMessageSquare } from "react-icons/lu";
 import { Link } from 'react-router-dom';
-
+import Sidebar from '../../Sidebar/Sidebar';
+import rentalDashboardData from './RentDashboardData';
 
 
 
@@ -37,7 +37,7 @@ const ChangePassword =()=>{
 
                 <div className='flex flex-row'>
                     <div className='py-8'>
-                            <RentDashboard />
+                            \<Sidebar dashboardData={rentalDashboardData} />
                     </div>
 
 

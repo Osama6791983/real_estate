@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import { Link } from 'react-router-dom';
+import OnboardingForm from './OnboardingForm';
 
-const Signup = () => {
+function SignUp() {
+  const [formData, setFormData] = useState({email: '', password:'', phone:''});
+  const [showOnboarding, setShowOnboarding] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate a successful sign-up response
+    setShowOnboarding(true);
+  };
+
   return (
     <>
       <div className="">
         <div>
           <Navbar />
+          <hr />
         </div>
+        {!showOnboarding ?(
 
         <div
           className="relative h-screen bg-cover bg-center"
@@ -24,10 +41,14 @@ const Signup = () => {
                 </Link>
               </p>
 
-              <form className="py-4">
+              <form className="py-4" onSubmit={handleSubmit}>
                 <div className="my-3 px-8 sm:px-12 relative">
                   <input
                     type="email"
+                    name='email'
+                    id='email'
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="&#xf0e0; Email Or Username"
                     className="border border-gray-700 rounded-xl w-full py-1 pl-2 placeholder-gray-400 placeholder-font-awesome"
                     style={{ fontFamily: 'Arial, FontAwesome' }}
@@ -36,6 +57,10 @@ const Signup = () => {
                 <div className="my-3 px-8 sm:px-12 relative">
                   <input
                     type="password"
+                    id='password'
+                    name='password'
+                    value={formData.password}
+                    onChange={handleChange}
                     placeholder="&#xf023; Password"
                     className="border border-gray-700 rounded-xl w-full py-1 pl-2 placeholder-gray-400 placeholder-font-awesome"
                     style={{ fontFamily: 'Arial, FontAwesome' }}
@@ -43,7 +68,12 @@ const Signup = () => {
                 </div>
                 <div className="my-3 px-8 sm:px-12 relative">
                   <input
-                    type="password"
+                    type="text"
+                    id='phoneNo'
+                    name='phoneNo'
+                    value={formData.phoneNo}
+                    onChange={handleChange}
+
                     placeholder="&#xf095; Phone Number"
                     className="border border-gray-700 rounded-xl w-full py-1 pl-2 placeholder-gray-400 placeholder-font-awesome"
                     style={{ fontFamily: 'Arial, FontAwesome' }}
@@ -89,9 +119,13 @@ const Signup = () => {
             </div>
           </div>
         </div>
+
+        ):(
+          <OnboardingForm email={formData.email} />
+        )}
       </div>
     </>
   );
 };
 
-export default Signup;
+export default SignUp;

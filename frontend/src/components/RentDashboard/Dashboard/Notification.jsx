@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../Navbar/Navbar';
-import RentDashboard from './RentDashboard';
+import rentDashboard from './RentDashboardData';
+import Sidebar from '../../Sidebar/Sidebar';
 
 const Notification=()=>{
     return(
@@ -13,7 +14,7 @@ const Notification=()=>{
 
                 <div className='flex flex-row'>
                     <div className='py-8'>
-                        <RentDashboard />
+                    <Sidebar dashboardData={rentDashboard} />
                     </div>
 
                     <div className='bg-gray-100 w-full '>

@@ -3,9 +3,8 @@ import Navbar from '../../Navbar/Navbar';
 import { IoCallOutline } from "react-icons/io5";
 import { LuMessageSquare } from "react-icons/lu";
 import { Link } from 'react-router-dom';
-import RentDashboard from '../Dashboard/RentDashboard';
-
-
+import rentalDashboardData from '../Dashboard/RentDashboardData';
+import Sidebar from '../../Sidebar/Sidebar';
 
 
 const SupportPage =()=>{
@@ -37,7 +36,7 @@ const SupportPage =()=>{
 
                 <div className='flex flex-row'>
                     <div className='py-8'>
-                            <RentDashboard />
+                            <Sidebar dashboardData={rentalDashboardData} />
                     </div>
 
 
