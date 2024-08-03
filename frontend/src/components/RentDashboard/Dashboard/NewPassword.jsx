@@ -1,9 +1,9 @@
 import React from 'react';
 import Navbar from '../../Navbar/Navbar';
-import RentDashboard from './RentDashboard';
+import rentDashboard from './RentDashboardData';
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from 'react-router-dom';
-
+import Sidebar from '../../Sidebar/Sidebar';
 
 
 const SuccessAlert =()=>{
@@ -16,7 +16,7 @@ const SuccessAlert =()=>{
 
             <div className='flex flex-row'>
                 <div className='py-8'> 
-                    <RentDashboard />
+                   <Sidebar dashboardData={rentDashboard} />
                 </div>
 
                 <div>
@@ -54,7 +54,7 @@ const NewPassword = () => {
 
                 <div className="flex flex-row flex-grow">
                     <div>
-                        <RentDashboard />
+                    <Sidebar dashboardData={rentDashboard} />
                     </div>
 
                     <div className="bg-gray-100 w-full px-8 py-4 flex-grow">

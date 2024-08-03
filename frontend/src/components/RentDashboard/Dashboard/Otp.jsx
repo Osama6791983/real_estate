@@ -1,5 +1,6 @@
 import React from 'react';
-import RentDashboard from './RentDashboard';
+import rentDashboard from './RentDashboardData';
+import Sidebar from '../../Sidebar/Sidebar';
 import Navbar from '../../Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack } from "react-icons/io";
@@ -16,7 +17,7 @@ const Otp=()=>{
 
                 <div className='flex flex-row'>
                     <div className='py-8'>
-                    <RentDashboard />
+                    <Sidebar dashboardData={rentDashboard} />
                     </div>    
                        
                     <div className='container'>

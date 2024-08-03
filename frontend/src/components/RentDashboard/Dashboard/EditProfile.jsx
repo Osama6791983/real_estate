@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from '../../Navbar/Navbar';
-import RentDashboard from './RentDashboard';
+import RentDashboard from './RentDashboardData';
 import { CiEdit } from "react-icons/ci";
+import Sidebar from '../../Sidebar/Sidebar';
 
 const EditProfile = () => {
     return (
@@ -13,7 +14,7 @@ const EditProfile = () => {
                 </div>
                 <div className='flex flex-row'>
                     <div className='py-8 '>
-                        <RentDashboard />
+                        <Sidebar dashboardData={RentDashboard} />
                     </div>
 
                     <div className='bg-gray-100 w-full flex flex-col items-center'>
